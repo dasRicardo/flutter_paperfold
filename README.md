@@ -7,8 +7,10 @@
 </p>
 
 ---
-This package provides a simple to use widget to apply a paper fold effect on it's child.
+<p>This package provides a simple to use widget to apply a paper fold effect on it's child.</p>
+
 <img src="paperfold.gif" alt="preview" width="200" height="433" />
+
 ## Installation
 First, add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
 ## Issues
