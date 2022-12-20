@@ -1,0 +1,4 @@
+enum PaperFoldMainAxis {
+  horizontal,
+  vertical,
+}
