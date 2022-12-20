@@ -8,7 +8,7 @@
 
 ---
 This package provides a simple to use widget to apply a paper fold effect on it's child.
-![](paperfold.gif)
+![](paperfold.gif =250x)
 ## Installation
 First, add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
 ## Issues
