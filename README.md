@@ -7,14 +7,28 @@
 </p>
 
 ---
-<p>This package provides a simple to use widget to apply a paper fold effect on it's child.</p>
+<p>This package provides a simple to use widget to apply a paper fold effect on it's child. You can choose between horizontal and vertical fold direction, the number of strips are at least two.</p>
 
 <img src="paperfold.gif" alt="preview" width="200" height="433" />
 
+# Getting startet
+
 ## Installation
-First, add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
+Add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
+
+## Usage
+'''
+Paperfold(
+);
+'''
+
+## Limitation
+- no interaction (gesture detection) when the widget is folded (fold value < 1)
+- static conent (no animations, videos or something), no frame updates if the widget is folded (fold value < 1)
+
 ## Issues
-No interaction (gesture detection) when the widget is folded (fold value < 1)
-[See Issue: 88810](https://github.com/flutter/flutter/issues/88810)
+Feel free to file any [issues, bugs, or feature requests](https://github.com/dasRicardo/flutter_paperfold/issues).
+All contributions are welcome :)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
