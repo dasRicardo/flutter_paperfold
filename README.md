@@ -63,5 +63,5 @@ All contributions are welcome :)
 ## License
 <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?longCache=true" alt="BSD-3-Clause"></a>
 
-# Special thx
+## Special thx
 Special thanks to GwaedGlas for reviewing and sparring this package
