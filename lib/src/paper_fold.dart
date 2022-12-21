@@ -50,7 +50,7 @@ class PaperFold extends SingleChildRenderObjectWidget {
     this.isAntiAliased = false,
     this.filterQuality = FilterQuality.none,
     this.mainAxis = PaperFoldMainAxis.horizontal,
-    this.perspectiveDistortionFactor = .0015,
+    this.perspectiveDistortionFactor = .0025,
   })  : assert(strips > 1, "Failure, strips need top be greater then 1."),
         super(
           child: child,
