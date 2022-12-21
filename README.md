@@ -1,9 +1,8 @@
 # Paperfold
-<p align="center">  
-<a href="https://github.com/flutter/packages/tree/master/packages/flutter_lints"><img src="https://img.shields.io/badge/style-flutter_lints-40c4ff.svg" alt="style: flutter lints"></a>  
-<a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx"><img src="https://img.shields.io/badge/flutter-website-deepskyblue.svg" alt="Flutter Website"></a>  
-<a href="https://fluttersamples.com"><img src="https://img.shields.io/badge/flutter-samples-teal.svg?longCache=true" alt="Flutter Samples"></a>  
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>  
+<p align="center">
+<a href="https://github.com/flutter/packages/tree/master/packages/flutter_lints"><img src="https://img.shields.io/badge/style-flutter_lints-40c4ff.svg" alt="style: flutter lints"></a>
+<a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx"><img src="https://img.shields.io/badge/flutter-website-deepskyblue.svg" alt="Flutter Website"></a>
+<a href="https://fluttersamples.com"><img src="https://img.shields.io/badge/flutter-samples-teal.svg?longCache=true" alt="Flutter Samples"></a>
 </p>
 
 ---
@@ -62,7 +61,7 @@ Feel free to file any [issues, bugs, or feature requests](https://github.com/das
 All contributions are welcome :)
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+<a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?longCache=true" alt="BSD-3-Clause"></a>
 
 ## Special thx
 Special thanks to GwaedGlas for reviewing and sparring this package
