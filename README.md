@@ -63,3 +63,6 @@ All contributions are welcome :)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Special thx
+Special thanks to GwaedGlas for reviewing and sparring this package
