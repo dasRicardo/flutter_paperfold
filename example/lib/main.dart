@@ -21,76 +21,74 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter paper fold',
-      home: Builder(
-          builder: (context) {
-            final pixelRatio = MediaQuery.of(context).devicePixelRatio;
-            // final pixelRatio = 1.0;
-            return Scaffold(
-              backgroundColor: Colors.red,
-              onDrawerChanged: (isOpened) {},
-              body: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      _getContent(pixelRatio),
-                      // _getContent(),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: _getContent(pixelRatio),
-                      ),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: _getContent(pixelRatio),
-                      ),
-                      Slider(
-                        value: foldSliderValue,
-                        min: 0,
-                        max: 1,
-                        divisions: 100,
-                        label: foldSliderValue.toString(),
-                        onChanged: (double value) {
-                          setState(() {
-                            foldSliderValue = value;
-                          });
-                        },
-                      ),
-                      Slider(
-                        value: splitsSliderValue,
-                        min: 2,
-                        max: 10,
-                        divisions: 10,
-                        label: splitsSliderValue.round().toString(),
-                        onChanged: (double value) {
-                          setState(() {
-                            splitsSliderValue = value;
-                          });
-                        },
-                      ),
-                      Row(
-                        children: [
-                          const Text("MainAxis: HORIZONTAL"),
-                          Checkbox(
-                            value: mainAxis == PaperFoldMainAxis.horizontal,
-                            onChanged: (value) {
-                              setState(() {
-                                if (mainAxis == PaperFoldMainAxis.horizontal) {
-                                  mainAxis = PaperFoldMainAxis.vertical;
-                                } else {
-                                  mainAxis = PaperFoldMainAxis.horizontal;
-                                }
-                              });
-                            },
-                          ),
-                        ],
-                      )
-                    ],
+      home: Builder(builder: (context) {
+        final pixelRatio = MediaQuery.of(context).devicePixelRatio;
+        // final pixelRatio = 1.0;
+        return Scaffold(
+          backgroundColor: Colors.red,
+          onDrawerChanged: (isOpened) {},
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  _getContent(pixelRatio),
+                  // _getContent(),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: _getContent(pixelRatio),
                   ),
-                ),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: _getContent(pixelRatio),
+                  ),
+                  Slider(
+                    value: foldSliderValue,
+                    min: 0,
+                    max: 1,
+                    divisions: 100,
+                    label: foldSliderValue.toString(),
+                    onChanged: (double value) {
+                      setState(() {
+                        foldSliderValue = value;
+                      });
+                    },
+                  ),
+                  Slider(
+                    value: splitsSliderValue,
+                    min: 2,
+                    max: 10,
+                    divisions: 10,
+                    label: splitsSliderValue.round().toString(),
+                    onChanged: (double value) {
+                      setState(() {
+                        splitsSliderValue = value;
+                      });
+                    },
+                  ),
+                  Row(
+                    children: [
+                      const Text("MainAxis: HORIZONTAL"),
+                      Checkbox(
+                        value: mainAxis == PaperFoldMainAxis.horizontal,
+                        onChanged: (value) {
+                          setState(() {
+                            if (mainAxis == PaperFoldMainAxis.horizontal) {
+                              mainAxis = PaperFoldMainAxis.vertical;
+                            } else {
+                              mainAxis = PaperFoldMainAxis.horizontal;
+                            }
+                          });
+                        },
+                      ),
+                    ],
+                  )
+                ],
               ),
-            );
-          }
-      ),
+            ),
+          ),
+        );
+      }),
     );
   }
 

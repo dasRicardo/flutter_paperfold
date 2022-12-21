@@ -25,7 +25,7 @@ extension on Size {
 /// Use this to avoid if else blocs.
 extension on PaperFoldMainAxis {
   Offset get offset {
-    if (this == PaperFoldMainAxis.horizontal ) {
+    if (this == PaperFoldMainAxis.horizontal) {
       return const Offset(1, 0);
     }
     return const Offset(0, 1);

@@ -1,5 +1,5 @@
 name: paperfold
-description: Implement paperfold effect
+description: This package provides a widget which applies a paper fold effect on it's child. You can choose between horizontal and vertical fold direction. The number of strips has to be at least two.
 version: 1.0.0
 repository: https://github.com/dasRicardo/flutter_paperfold
 

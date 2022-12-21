@@ -8,7 +8,7 @@
 ---
 <p>This package provides a widget which applies a paper fold effect on it's child. You can choose between horizontal and vertical fold direction. The number of strips has to be at least two.</p>
 
-<img src="https://github.com/dasRicardo/flutter_paperfold/blob/main/paperfold.gif" alt="preview" width="200" height="433" />
+<img src="https://github.com/dasRicardo/flutter_paperfold/raw/main/paperfold.gif" alt="preview" width="200" height="433" />
 
 # Getting startet
 
