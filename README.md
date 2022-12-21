@@ -17,14 +17,45 @@
 Add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
 
 ## Usage
-'''
-Paperfold(
+Simply add the widget to your tree and done :). Take a look at example to see more.
+
+```
+PaperFold(
+  mainAxis: PaperFoldMainAxis.vertical,
+  strips: 4,
+  foldValue: .5,
+  pixelRatio: 1,//works best if you query the device pixel ration with MediaQuery.of
+  child: ClipRRect(
+    borderRadius: BorderRadius.all(Radius.circular(20)),
+    child: Container(
+      color: Colors.green,
+      height: 150,
+      child: ListView.builder(
+        itemCount: 30,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              Row(
+                children: const [
+                  Icon(
+                    Icons.translate,
+                    size: 50,
+                  ),
+                  Text("hello world, hello world")
+                ],
+              ),
+            ],
+          );
+        },
+      ),
+    ),
+  ),
 );
-'''
+```
 
 ## Limitation
 - no interaction (gesture detection) when the widget is folded (fold value < 1)
-- static conent (no animations, videos or something), no frame updates if the widget is folded (fold value < 1)
+- no animations, videos or something, you can add it but no frame updates if the widget is folded (fold value < 1) so it will look weired
 
 ## Issues
 Feel free to file any [issues, bugs, or feature requests](https://github.com/dasRicardo/flutter_paperfold/issues).
