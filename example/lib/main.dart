@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:paperfold/paperfold.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();
-
-  const MyApp({Key? key}):super(key: key);
 }
 
 class _MyAppState extends State<MyApp> {
@@ -21,10 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter 3D Cube Effect',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      title: 'Flutter paper fold',
       home: Builder(
           builder: (context) {
             final pixelRatio = MediaQuery.of(context).devicePixelRatio;
@@ -36,17 +32,17 @@ class _MyAppState extends State<MyApp> {
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
                     children: [
+                      _getContent(pixelRatio),
+                      // _getContent(),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: _getContent(pixelRatio),
+                      ),
                       Align(
                         alignment: Alignment.topLeft,
                         child: _getContent(pixelRatio),
                       ),
-                      // _getContent(),
-                      // Align(
-                      //   alignment: Alignment.topRight,
-                      //   child: _getContent(),
-                      // ),
                       Slider(
                         value: foldSliderValue,
                         min: 0,
@@ -103,12 +99,11 @@ class _MyAppState extends State<MyApp> {
       mainAxis: mainAxis,
       strips: splitsSliderValue.round(),
       foldValue: foldSliderValue,
-      perspectiveDistortionFactor: .0025,
       pixelRatio: pixelRatio,
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         child: Container(
-          color: Colors.blue,
+          color: Colors.green,
           height: 150,
           child: ListView.builder(
             itemCount: 30,
