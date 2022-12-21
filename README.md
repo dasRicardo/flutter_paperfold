@@ -54,7 +54,7 @@ PaperFold(
 ```
 
 ## Limitation
-- no interaction (gesture detection) when the widget is folded (fold value < 1)
+- no interaction (gesture detection, tapping) when the widget is folded (fold value < 1)
 - no animations, videos or something, you can add it but no frame updates if the widget is folded (fold value < 1) so it will look weired
 
 ## Issues
