@@ -9,10 +9,10 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   var foldSliderValue = 1.0;
   var splitsSliderValue = 2.0;
   var mainAxis = PaperFoldMainAxis.horizontal;
@@ -101,7 +101,7 @@ class _MyAppState extends State<MyApp> {
       foldValue: foldSliderValue,
       pixelRatio: pixelRatio,
       child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
         child: Container(
           color: Colors.green,
           height: 150,

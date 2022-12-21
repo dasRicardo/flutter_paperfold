@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/rendering.dart';
@@ -57,7 +56,7 @@ class PaperFold extends SingleChildRenderObjectWidget {
         );
 
   @override
-  RenderObject createRenderObject(BuildContext context) => _PaperFoldRenderBox(
+  RenderObject createRenderObject(BuildContext context) => PaperFoldRenderBox(
         strips: strips,
         foldValue: foldValue,
         mainAxis: mainAxis,
@@ -69,7 +68,7 @@ class PaperFold extends SingleChildRenderObjectWidget {
 
   @override
   void updateRenderObject(
-      BuildContext context, _PaperFoldRenderBox renderObject) {
+      BuildContext context, PaperFoldRenderBox renderObject) {
     renderObject
       ..mainAxis = mainAxis
       ..strips = strips

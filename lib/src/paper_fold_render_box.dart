@@ -1,6 +1,6 @@
 part of 'paper_fold.dart';
 
-class _PaperFoldRenderBox extends RenderProxyBox {
+class PaperFoldRenderBox extends RenderProxyBox {
   /// The transform matrix for a strip. We need two because odd strips need
   /// another matrix than even strips.
   ///
@@ -105,7 +105,7 @@ class _PaperFoldRenderBox extends RenderProxyBox {
   }
 
   /// Constructor
-  _PaperFoldRenderBox({
+  PaperFoldRenderBox({
     required int strips,
     required double foldValue,
     required PaperFoldMainAxis mainAxis,
