@@ -10,7 +10,7 @@
 
 <img src="https://github.com/dasRicardo/flutter_paperfold/raw/main/paperfold.gif" alt="preview" width="200" height="433" />
 
-# Getting startet
+# Getting started
 
 ## Installation
 Add `paperfold` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/). Or run `pub add paperfold` in your terminal.
