@@ -317,7 +317,6 @@ class PaperFoldRenderBox extends RenderProxyBox {
     _setupGradients();
     _setupStripMatrix(radiance, mainAxisOffset);
 
-    layoutChild(child!, constraints);
     return finalContentSize;
   }
 

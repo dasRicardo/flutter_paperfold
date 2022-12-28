@@ -1,3 +1,8 @@
+# 1.0.2
+- removed unnecessary layoutChild call
+- fixed spelling
+- added pub ignore file
+
 # 1.0.1
 - some code formatting
 - add better description to pubspec.yaml
