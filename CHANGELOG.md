@@ -1,3 +1,7 @@
+# 1.0.3
+- fixed missing constraints behaviour
+- added some assertions
+
 # 1.0.2
 - removed unnecessary layoutChild call
 - fixed spelling
@@ -7,5 +11,6 @@
 - some code formatting
 - add better description to pubspec.yaml
 - fixed wrong link to gif file in readme
+
 # 1.0.0
- * Initial release of paperfold
+- initial release

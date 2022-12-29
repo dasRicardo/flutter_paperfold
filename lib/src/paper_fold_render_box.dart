@@ -217,6 +217,7 @@ class PaperFoldRenderBox extends RenderProxyBox {
         fit: BoxFit.scaleDown,
         filterQuality: _filterQuality);
     _offscreenChild = recorder.endRecording();
+    markNeedsLayout();
     markNeedsPaint();
   }
 
@@ -264,7 +265,7 @@ class PaperFoldRenderBox extends RenderProxyBox {
       {required BoxConstraints constraints,
       required ChildLayouter layoutChild}) {
     if (child == null) {
-      return Size.zero;
+      return constraints.smallest;
     }
 
     final contentSize = layoutChild(child!, constraints);
@@ -274,10 +275,22 @@ class PaperFoldRenderBox extends RenderProxyBox {
       return contentSize;
     }
 
+    if (_foldValue > 0 && _foldValue < 1 && _offscreenChild == null) {
+      return contentSize;
+    }
+
     final mainAxisOffset = _mainAxis.offset;
     if (_foldValue == 0) {
-      return Size(contentSize.width * mainAxisOffset.dy,
-          contentSize.height * mainAxisOffset.dx);
+      return Size(
+        min(
+          constraints.maxWidth,
+          max(contentSize.width * mainAxisOffset.dy, constraints.minWidth),
+        ),
+        min(
+          constraints.maxHeight,
+          max(contentSize.height * mainAxisOffset.dx, constraints.minHeight),
+        ),
+      );
     }
 
     /// Angle in radiance for a given fold value.
@@ -303,10 +316,22 @@ class PaperFoldRenderBox extends RenderProxyBox {
         mainAxisOffset.multiplyWithSize(_axialStripContentSize);
 
     final finalContentSize = Size(
-      _axialStripOffset.dx * _strips +
-          _axialStripContentSize.width * mainAxisOffset.dy,
-      _axialStripOffset.dy * _strips +
-          _axialStripContentSize.height * mainAxisOffset.dx,
+      min(
+        constraints.maxWidth,
+        max(
+          _axialStripOffset.dx * _strips +
+              _axialStripContentSize.width * mainAxisOffset.dy,
+          constraints.minWidth,
+        ),
+      ),
+      min(
+        constraints.maxHeight,
+        max(
+          _axialStripOffset.dy * _strips +
+              _axialStripContentSize.height * mainAxisOffset.dx,
+          constraints.minHeight,
+        ),
+      ),
     );
 
     _perspectiveCorrectionOffset = Offset(
