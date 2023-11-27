@@ -1,9 +1,9 @@
 # Paperfold
-<p align="center">
-<a href="https://github.com/flutter/packages/tree/master/packages/flutter_lints"><img src="https://img.shields.io/badge/style-flutter_lints-40c4ff.svg" alt="style: flutter lints"></a>
-<a href="https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx"><img src="https://img.shields.io/badge/flutter-website-deepskyblue.svg" alt="Flutter Website"></a>
-<a href="https://fluttersamples.com"><img src="https://img.shields.io/badge/flutter-samples-teal.svg?longCache=true" alt="Flutter Samples"></a>
-</p>
+
+[![Pub](https://img.shields.io/pub/v/paperfold.svg?style=popout)](https://pub.dev/packages/paperfold)
+[![Style](https://img.shields.io/badge/style-flutter_lints-40c4ff.svg)](https://github.com/flutter/packages/tree/master/packages/flutter_lints)
+[![Style](https://img.shields.io/badge/style-flutter_lints-40c4ff.svg)](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx)
+[![Style](https://img.shields.io/badge/flutter-samples-teal.svg)](https://fluttersamples.com)
 
 ---
 <p>This package provides a widget which applies a paper fold effect on it's child. You can choose between horizontal and vertical fold direction. The number of strips has to be at least two.</p>
