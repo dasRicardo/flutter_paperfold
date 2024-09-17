@@ -79,6 +79,7 @@ class PaperFoldRenderBox extends RenderProxyBox {
   set strips(int value) {
     if (_strips == value || value == 0) return;
     _strips = value;
+    markNeedsCompositingBitsUpdate();
     markNeedsLayout();
     markNeedsPaint();
   }
@@ -87,6 +88,7 @@ class PaperFoldRenderBox extends RenderProxyBox {
   set foldValue(double value) {
     if (_foldValue == value) return;
     _foldValue = value;
+    markNeedsCompositingBitsUpdate();
     markNeedsLayout();
     markNeedsPaint();
   }
@@ -150,8 +152,14 @@ class PaperFoldRenderBox extends RenderProxyBox {
   @override
   void paint(PaintingContext context, Offset offset) {
     /// Nothing to paint.
-    if (size.isEmpty || child == null || _foldValue == 0) return;
+    if (size.isEmpty || child == null) return;
 
+    if(_foldValue == 0) {
+      _offscreenChild?.dispose();
+      _offscreenChild = null;
+      return;
+    }
+    
     /// Complete unfolded so paint only firstChild and were are done.
     if (_foldValue == 1) {
       context.paintChild(child!, offset);
@@ -170,9 +178,9 @@ class PaperFoldRenderBox extends RenderProxyBox {
 
     if (_offscreenChild == null) {
       final offsetLayer = OffsetLayer(offset: offset);
-      context.pushLayer(offsetLayer, (layerContext, layerOffset) {
-        layerContext.paintChild(child!, Offset.zero);
-      }, Offset.zero);
+      context.pushClipRect(needsCompositing, offset, Rect.fromLTRB(0, 0, size.width, size.height), (context, offset) => context.pushLayer(offsetLayer, (offsetContext, offset) {
+        offsetContext.paintChild(child!, Offset.zero);
+      },Offset.zero),);
       _generateOffscreenChild(offsetLayer);
     } else {
       for (double stripIndex = 0; stripIndex < _strips; stripIndex++) {
@@ -272,10 +280,6 @@ class PaperFoldRenderBox extends RenderProxyBox {
     _offscreenChildSize = contentSize;
 
     if (contentSize.width == 0 || contentSize.height == 0 || _foldValue == 1) {
-      return contentSize;
-    }
-
-    if (_foldValue > 0 && _foldValue < 1 && _offscreenChild == null) {
       return contentSize;
     }
 

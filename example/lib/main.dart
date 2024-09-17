@@ -106,10 +106,10 @@ class MyAppState extends State<MyApp> {
           child: ListView.builder(
             itemCount: 30,
             itemBuilder: (context, index) {
-              return Column(
+              return const Column(
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.translate,
                         size: 50,

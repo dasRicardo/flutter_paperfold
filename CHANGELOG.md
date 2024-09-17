@@ -1,3 +1,6 @@
+# 1.0.4
+- fix issue https://github.com/dasRicardo/flutter_paperfold/issues/3
+
 # 1.0.3
 - fixed missing constraints behaviour
 - added some assertions
