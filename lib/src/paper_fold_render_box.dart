@@ -154,12 +154,12 @@ class PaperFoldRenderBox extends RenderProxyBox {
     /// Nothing to paint.
     if (size.isEmpty || child == null) return;
 
-    if(_foldValue == 0) {
+    if (_foldValue == 0) {
       _offscreenChild?.dispose();
       _offscreenChild = null;
       return;
     }
-    
+
     /// Complete unfolded so paint only firstChild and were are done.
     if (_foldValue == 1) {
       context.paintChild(child!, offset);
@@ -178,9 +178,15 @@ class PaperFoldRenderBox extends RenderProxyBox {
 
     if (_offscreenChild == null) {
       final offsetLayer = OffsetLayer(offset: offset);
-      context.pushClipRect(needsCompositing, offset, Rect.fromLTRB(0, 0, size.width, size.height), (context, offset) => context.pushLayer(offsetLayer, (offsetContext, offset) {
-        offsetContext.paintChild(child!, Offset.zero);
-      },Offset.zero),);
+      context.pushClipRect(
+        needsCompositing,
+        offset,
+        Rect.fromLTRB(0, 0, size.width, size.height),
+        (context, offset) =>
+            context.pushLayer(offsetLayer, (offsetContext, offset) {
+          offsetContext.paintChild(child!, Offset.zero);
+        }, Offset.zero),
+      );
       _generateOffscreenChild(offsetLayer);
     } else {
       for (double stripIndex = 0; stripIndex < _strips; stripIndex++) {

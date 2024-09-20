@@ -70,7 +70,8 @@ class PaperFold extends SingleChildRenderObjectWidget {
   @override
   void updateRenderObject(
       BuildContext context, PaperFoldRenderBox renderObject) {
-    assert(foldValue <= 1 && foldValue >= 0, "Failure, foldValue: $foldValue must >= 0 and <= 1.");
+    assert(foldValue <= 1 && foldValue >= 0,
+        "Failure, foldValue: $foldValue must >= 0 and <= 1.");
     assert(strips > 1, "Failure, strips need to be greater then 1.");
     renderObject
       ..mainAxis = mainAxis
